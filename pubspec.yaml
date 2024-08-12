@@ -37,6 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.6
   uuid: ^4.4.0
   intl: ^0.19.0
+  table_calendar: ^3.1.2
+  flutter_riverpod: ^2.5.1
+  flutter_gemini: ^2.0.3
+  image_picker: ^1.0.7
+  dash_chat_2: ^0.0.20
 
 dev_dependencies:
   flutter_test:

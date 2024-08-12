@@ -1,10 +1,13 @@
+import 'package:expense_tracker/pages/drawer.dart';
 import 'package:flutter/material.dart';
 
-import 'package:expense_tracker/widgets/new_expense.dart';
+import 'package:expense_tracker/pages/new_expense.dart';
 import 'package:expense_tracker/models/expense.dart';
 import 'package:expense_tracker/widgets/chart/chart.dart';
 
-import 'expense_list/expenses_list.dart';
+import 'calendernote.dart';
+import '../widgets/expense_list/expenses_list.dart';
+
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -85,11 +88,18 @@ class _ExpensesState extends State<Expenses> {
         title: const Text('Flutter ExpenseTracker'),
         actions: [
           IconButton(
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>CalendarScreen()));
+            },
+            icon: const Icon(Icons.pending_actions_outlined),
+          ),
+          IconButton(
             onPressed: _openAddExpenseOverlay,
             icon: const Icon(Icons.add),
           ),
         ],
       ),
+      drawer: const MainDrawer(),
       body: Column(
         children: [
           Chart(expenses: _registeredExpenses),
